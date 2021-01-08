@@ -1,11 +1,14 @@
 package ru.otus.spring.ssh.hw.service;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import ru.otus.spring.ssh.hw.dao.InputOutput;
 import ru.otus.spring.ssh.hw.domain.Question;
 import ru.otus.spring.ssh.hw.domain.User;
 
 public class TestService {
-	private static final int REQUESTS_COUNT = 5;
+	@Value("${requests.count}")
+	private int REQUESTS_COUNT = -1;
 	
 	private final InputOutput inputOutput;
 	private final User user;
